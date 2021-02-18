@@ -1,0 +1,11 @@
+clear all;
+//x(n)=(1/2)^n*u(n);
+n=0:1:1000;
+fs=1000;
+x=(1/2).^n;
+//stem(n,x);
+//axis([0 25 0 1]);
+disp('Calculate Energy of Signal');
+E=sum(abs(x).^2);
+//energy=spectrum(x,n);
+P=E/length(x);
