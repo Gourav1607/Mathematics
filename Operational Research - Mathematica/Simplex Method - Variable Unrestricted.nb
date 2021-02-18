@@ -1,0 +1,172 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.4' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4881,        164]
+NotebookOptionsPosition[      4459,        144]
+NotebookOutlinePosition[      4801,        159]
+CellTagsIndexPosition[      4758,        156]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Simplex", " ", "method", " ", "if", " ", "variable", " ", "is", " ", 
+    "unrestricted"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Max", " ", "z"}], "=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"5", "x1"}], "+", 
+       RowBox[{"6", "x2", "\n", 
+        RowBox[{"s", ".", "t", ".", "   ", "x1"}]}], "+", 
+       RowBox[{"2", "x2"}]}], "=", 
+      RowBox[{
+       RowBox[{"5", "\[IndentingNewLine]", "   ", "-", "x1", "+", 
+        RowBox[{"5", "x2"}]}], "\[GreaterEqual]", 
+       RowBox[{
+        RowBox[{"3", "\n", "\t   ", "4", "x1"}], "+", 
+        RowBox[{"7", "x2"}]}], "\[LessEqual]", 
+       RowBox[{"8", "\n", "\t   ", "x1", " ", "unrestricted"}]}]}]}], ",", 
+    " ", 
+    RowBox[{
+     RowBox[{"x2", "\[GreaterEqual]", 
+      RowBox[{"0", "\n", "\t   ", "x1"}]}], "=", 
+     RowBox[{"x3", "-", 
+      RowBox[{"x4", " ", "where", " ", "x3"}]}]}], ",", 
+    RowBox[{"x4", ">", 
+     RowBox[{"0", "\n", "so"}]}], ",", "\[IndentingNewLine]", "\t", 
+    RowBox[{
+     RowBox[{"max", "  ", "z"}], "=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"5", "x3"}], "-", 
+       RowBox[{"5", "x4"}], "+", 
+       RowBox[{"6", "x2", "\n", "\t", 
+        RowBox[{"s", ".", "t", ".", " ", "x3"}]}], "-", "x4", "+", 
+       RowBox[{"2", "x2"}]}], "=", 
+      RowBox[{
+       RowBox[{"5", "\n", "\t\t", "-", "x3", "+", "x4", "+", 
+        RowBox[{"5", "x2"}]}], "\[GreaterEqual]", 
+       RowBox[{
+        RowBox[{"3", "\n", "\t\t ", "4", "x3"}], "-", 
+        RowBox[{"4", "x4"}], "+", 
+        RowBox[{"7", "x2"}]}], "\[LessEqual]", "8"}]}]}]}], "\n", "*)"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"LinearProgramming", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "5"}], ",", "5", ",", 
+       RowBox[{"-", "6"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"1", ",", 
+         RowBox[{"-", "1"}], ",", "2"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "1"}], ",", "1", ",", "5"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"4", ",", 
+         RowBox[{"-", "4"}], ",", "7"}], "}"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"5", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"3", ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"8", ",", 
+         RowBox[{"-", "1"}]}], "}"}]}], "}"}]}], "]"}], "\n"}]}]], "Input",
+ CellChangeTimes->{{3.690391682295209*^9, 3.690391800622501*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0", ",", "19", ",", "12"}], "}"}]], "Output",
+ CellChangeTimes->{3.690391802451802*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Maximize", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"5", " ", "x1"}], "+", 
+      RowBox[{"6", " ", "x2"}]}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"x1", "+", 
+        RowBox[{"2", " ", "x2"}]}], "\[Equal]", "5"}], " ", "&&", " ", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "x1"}], "+", 
+        RowBox[{"5", " ", "x2"}]}], "\[GreaterEqual]", "3"}], " ", "&&", " ", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"4", " ", "x1"}], "+", 
+        RowBox[{"7", " ", "x2"}]}], "\[LessEqual]", "8"}], " ", "&&", " ", 
+      RowBox[{"x2", "\[GreaterEqual]", "0"}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x1", ",", "x2"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.690391810987914*^9, 3.6903918464951887`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"-", "23"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"x1", "\[Rule]", 
+      RowBox[{"-", "19"}]}], ",", 
+     RowBox[{"x2", "\[Rule]", "12"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.6903918472907705`*^9}]
+}, Open  ]]
+},
+WindowSize->{751, 686},
+WindowMargins->{{-7, Automatic}, {Automatic, 0}},
+FrontEndVersion->"10.4 for Microsoft Windows (64-bit) (April 11, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 2619, 75, 352, "Input"],
+Cell[3202, 99, 127, 3, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3366, 107, 798, 23, 52, "Input"],
+Cell[4167, 132, 276, 9, 31, "Output"]
+}, Open  ]]
+}
+]
+*)
+
